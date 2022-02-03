@@ -1,0 +1,94 @@
+overview of regression equations:
+
+any regression
+y=b0+b1*x
+just like you can add complexity by adding more terms like: 
+y=b0+b1*x+b2*x^2+b3*sqrt(x)+b4*x^b5+b6*ln(x)+b7*(x+1)^b8+b9*1/(x+1)^b10
+consider each of these as a kernel or whatever
+
+x
+x^2
+sqrt(x)
+ln(x)
+x^a
+(x+1)^a
+
+
+now you can consider also discontinuous ones which is the same as RelU (ramp function):
+min(x-xmid,0)
+max(x-xmid,0)
+
+or abs function, which is like x^2 but it works better because the data won't get exaggerated:
+(x-xmid)^2
+abs(x-xmid)
+
+
+or the jump function (heaviside):
+heaviside(x-xmid)
+or its smoother form
+tanh(a(x-xmid))
+a controls how "quick" it jumps
+
+if you want to control the data by using neighboring points, use lazy algorithms & kernels: 
+W=exp(-dij^2)
+w_i=W_ij/sum_j(W_ij)
+wherein dij is the distance between point i & center j
+
+in additiive trees you have: 
+
+finally you have the situation when you need nonlinear multiplicative terms: 
+x1*x2
+(x1-x1mid)*(x2-x2mid)
+
+this works particularly well if the function is predominantly a function of x1 but the trend itself is a function of x2 (and possibly x1 itself)
+x1^(b0+b1*x1+b*x2)
+
+when you have different data sources, try to fit a different function to each one: 
+y=f1(x) for dataset1
+y=f2(x) for dataset2
+
+then you can fit a function for all of the data either as a committee: 
+y=b1*f1(x)+b2*f2(x)
+
+or use a single function for all of the data: 
+y=f(x)
+
+however, each dataset might not have enough data point to cover all of the dimensions, therefore, you might end up with formulas like this: 
+y=f1(x1) for dataset1
+y=f2(x2) for dataset2
+y=f3(x1,x2) for dataset3
+
+y=f(x1,x2) for all data
+
+to see how this works, you can take each data source & each method and do this:
+
+for example, HEC has 3 constant coefficients, 2.4, 0.37 & 0.5
+
+you can create a matrix by doing this: 
+what if I take dataset1, what will these coefficients be? 
+how does it perform on other datasets? 
+
+why is there a difference between the powers in different formulas? 
+
+you can start simple: 
+what if I only use a coefficient (mean)
+etc etc.
+
+but a simpler & more elegant approach would be to mix this with a hydrologic flood model
+
+or for example create a yield function and mix it with hydrologic budget
+
+I also learned how to work with optimization package in scipy so maybe I can do dam operation with it
+
+but the most important thing is to get a paper out & quick
+
+
+also, SVM is a kernel based method, it takes "support vectors" from data, it could take many data
+I don't know if there's a way to limit the number of data it takes but we could work on that!
+
+guassian process regression is very similar to SVM (also kernel ridge regression)
+
+SVM packages do not let you control the number of support vectors you might have but we can fix this!!!
+
+the fuzzy thing was an interesting one: 
+you would have two functions & you would average between the two by distance
