@@ -30,3 +30,11 @@ predict rainfall, predict dam storage, then see what we can do
 other outputs: production of fruits & crops in the basin
 net economic gains 
 food security
+
+
+explore data from other places maybe if data availability is an issue
+
+for example, is there a relationship between storage, or change in storage
+based on climate+cropped area(antrhropogenic drivers)?
+
+usa has some good data in usgs streamflow 
