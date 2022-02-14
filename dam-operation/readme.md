@@ -38,3 +38,7 @@ for example, is there a relationship between storage, or change in storage
 based on climate+cropped area(antrhropogenic drivers)?
 
 usa has some good data in usgs streamflow 
+
+for dam the best option would be to use landsatlook to obtain water area because landsat look has such small images!! it's perfect
+calibrate it first, then use it!!!
+
