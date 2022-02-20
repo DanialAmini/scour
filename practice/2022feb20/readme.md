@@ -16,3 +16,6 @@ However, the model tree is easier to visualize.
 # Bagging
 In weka you can select bagging. Then you select the sub model. For example the sub model can be simple `linear regression` or `M5Rules` or whatever. 
 Bagging uses 10 cross validation folds. Maybe reduce it to 4. But maybe not, keep all the ten. It uses `random tree` as the default model though. I don't like it alot. 
+
+# automatic model tree
+Say you want to do this: `y=a*x^b for x<x0 & y=c*x^d for x>x0`. I wished there was a algorithm which searched different values to find the best place. Usually split in half, so the search space is not too big, just equal to the number of variables & the number of divisions. For example 3 parts (`N/3` each) or 2 parts (`N/2` each). 
