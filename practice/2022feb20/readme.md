@@ -1,4 +1,4 @@
-#Find data files
+# Find data files
 find data for: 
 unsaturated soil
 concrete (I already have)
@@ -13,6 +13,6 @@ The default value is `minInstances=4` which is way too few, unaccptable.
 Notice that `M5 rules` is easier to implement because it quickly gives you the formulas. 
 However, the model tree is easier to visualize. 
 
-#Bagging
+# Bagging
 In weka you can select bagging. Then you select the sub model. For example the sub model can be simple `linear regression` or `M5Rules` or whatever. 
 Bagging uses 10 cross validation folds. Maybe reduce it to 4. But maybe not, keep all the ten. It uses `random tree` as the default model though. I don't like it alot. 
